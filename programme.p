@@ -3,18 +3,21 @@
 def var socsoc as char no-undo .
 DEF VAR motcle AS CHAR NO-UNDO .
 DEF VAR typcom AS CHAR NO-UNDO .
+def var numbon as char no-undo .
 
 update "societe " socsoc.
 
 UPDATE "motcle " motcle . 
 UPDATE "typcom " typcom .
+update "numbon " numbon .
 
 for each bonent where bonent.codsoc = socsoc
                 AND   bonent.motcle = motcle
                 AND   bonent.typcom = typcom
+                and   bonent.numbon = numbon
     no-lock:
     
-    display bonent.codsoc bonent.motcle bonent.typcom bonent.numbon .
+   /* display bonent.codsoc bonent.motcle bonent.typcom bonent.numbon . */
     
     /* lecture des lignes */
     
@@ -24,7 +27,7 @@ for each bonent where bonent.codsoc = socsoc
                     and   bonlig.numbon = bonlig.numbon
                     no-lock :
                     
-             display bonlig.chrono .
+             display bonent.codsoc bonent.motcle bonent.typcom bonent.numbon bonlig.chrono bonlig.articl .
     end.
     
 end.
