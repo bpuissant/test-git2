@@ -1,5 +1,5 @@
 /* exemple de programme progress */
-/* ligne crée sut git hub */
+/* ligne créée sur git hub */
 def var socsoc as char no-undo .
 
 update socsoc.
